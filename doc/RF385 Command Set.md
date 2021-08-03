@@ -2,7 +2,7 @@
 
 ## Index of Contents
 
-1. [History](#1- history)
+1. [History](#1-history)
 2. [Symbols](#2-symbols)
 3. [GNetPlus Protocol](GNetPlus%20Protocol.md)
     1. [Basic Package](GNetPlus%20Protocol.md#basic-package)
