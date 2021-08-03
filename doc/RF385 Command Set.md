@@ -74,7 +74,6 @@ Request Code is 10h
     * ACK: Success with response data
         * Response Data
 
-
 | Offset | Bytes | Type | Name | Description |
 | :----: | :---: | :--: | ------- | ---------------------------- |
 | 0 | N | u8 | Version | Firmware or Hardware Version |
