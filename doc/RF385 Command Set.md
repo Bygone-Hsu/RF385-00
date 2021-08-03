@@ -84,7 +84,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 
 * Get Firmware Version
 
-`[Send 7 Bytes] Get Version (10h: Code: Command)`
+<br />`[Send 7 Bytes] Get Version (10h: Code: Command)`
 
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
@@ -451,4 +451,3 @@ For the response of the example command, please refer to [GNetPlus's example](GN
 | F8h | ERR PARAM | Parameter error |
 | F7h | ERR PROTO | Protocol error |
 | F6h | ERR PROTO CRC | Protocol CRC16 check error |
-
