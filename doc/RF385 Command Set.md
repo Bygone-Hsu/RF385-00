@@ -73,7 +73,9 @@ Request Code is 10h
     * NAK: Response an [error code](#4\.-error-code)
     * ACK: Success with response data
         * Response Data
-<br />| Offset | Bytes | Type | Name | Description |
+
+
+| Offset | Bytes | Type | Name | Description |
 | :----: | :---: | :--: | ------- | ---------------------------- |
 | 0 | N | u8 | Version | Firmware or Hardware Version |
 
@@ -132,7 +134,8 @@ Request Code is 12h
     * NAK: Response an [error code](#4\.-error-code). 
     * ACK: Success with response data
         * Response Data
-<br />| Offset | Bytes | Type | Name | Description |
+
+| Offset | Bytes | Type | Name | Description |
 | :----: | :---: | :--: | ------- | ---------------------------- |
 | 0 | 1 | u8 | Mode | Current [Working Mode](#working-mode)<br />0: Auto<br />1: Command |
 
