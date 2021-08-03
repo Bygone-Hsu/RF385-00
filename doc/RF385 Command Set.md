@@ -8,7 +8,7 @@
     1. [Basic Package](GNetPlus%20Protocol.md#basic-package)
     2. [CRC16 Calculation](GNetPlus%20Protocol.md#crc16-calculation)
     3. [GNetPlus Implement](GNetPlus%20Protocol.md#gnetplus-implement)
-4. [Commands](#3-commands)
+4. [Commands](#4-commands)
     1. [Get Version](#4-1-get-version-command)
     2. [Set Working Mode](#4-2-set-working-mode)
     3. [Read EEPROM](#4-3-read-eeprom)
