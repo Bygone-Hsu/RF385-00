@@ -317,7 +317,7 @@ Request Code is 22h
 
 | Offset | Bytes | Type | Name | Description |
 | :----: | :---: | :---: | ---- | ----------- |
-| 0 | 2 | u16 | Address | Read [EEPROM Address](EEPROM%20Table#eeprom-table) (Big Endian)<br />Bit 0~14: EEPROM/Register Address please refer to [EEPROM Table](EEPROM%20Table#eeprom-table) <br /><br />Bit 15: Memory Option<br />0: EEPROM<br />1: Registers (Directly update the set value to Registers, and will force to enter the command mode) |
+| 0 | 2 | u16 | Address | Read [EEPROM Address](EEPROM%20Table.md#eeprom-table) (Big Endian)<br />Bit 0~14: EEPROM/Register Address please refer to [EEPROM Table](EEPROM%20Table.md#eeprom-table) <br /><br />Bit 15: Memory Option<br />0: EEPROM<br />1: Registers (Directly update the set value to Registers, and will force to enter the command mode) |
 | 1 | N | u8 | Data | Write data. |
 
 * Response
