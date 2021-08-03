@@ -100,6 +100,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 | `05` | `2` | ` 71 00` | `CRC16` |
 
 <br />`[Receive 43 Bytes] Get Version Response (06h: Code: ACK)`
+
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `FF` | `06` | `25` | `52` | `46` | `33` | `38` | `35` | `2D` | `30` | `30` | `20` | `52` | `4F` | `4D` | `...%RF385-00 ROM` |
@@ -184,6 +185,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 
 * Enter Command Mode
 <br />`[Send 7 Bytes] Enter Command Mode (12h: Code: Command)`
+
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `00` | `12` | `01` | `01` | `71` | `60` |  |  |  |  |  |  |  |  |  | <code>.....q\`</code> |
@@ -198,6 +200,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 | `05` | `2` | ` 71 60` | `CRC16` |
 
 <br />`[Receive 7 Bytes] Enter Command Mode Response (06h: Code: ACK)`
+
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `FF` | `06` | `01` | `00` | `A1` | `D1` |  |  |  |  |  |  |  |  |  | `.......` |
@@ -240,6 +243,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 
 * Read RF Power from EEPROM
 `[Send 9 Bytes] Read RF Power from EEPROM (24h: Code: Command)`
+
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `00` | `24` | `03` | `00` | `00` | `01` | `98` | `B1` |  |  |  |  |  |  |  | `..$......` |
@@ -255,6 +259,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 | `07` | `2` | ` 98 B1` | `CRC16` |
 
 <br />`[Receive 7 Bytes] Read RF Power from EEPROM Response (06h: Code: ACK)`
+
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `FF` | `06` | `01` | `0A` | `A6` | `51` |  |  |  |  |  |  |  |  |  | `......Q` |
@@ -271,6 +276,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 
 * Read Baudrate from EEPROM
 <br />`[Send 9 Bytes] Read Baudrate from EEPROM (24h: Code: Command)`
+
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `00` | `24` | `03` | `00` | `10` | `01` | `58` | `BC` |  |  |  |  |  |  |  | `..$....X.` |
@@ -328,6 +334,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 
 * Write RF Power 10 dBm to EEPROM
 <br />`[Send 9 Bytes] Write RF Power 10 dBm to EEPROM (22h: Code: Command)`
+
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `00` | `22` | `03` | `00` | `00` | `0A` | `5F` | `78` |  |  |  |  |  |  |  | `.."...._x` |
@@ -343,6 +350,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 | `07` | `2` | ` 5F 78` | `CRC16` |
 
 <br />`[Receive 7 Bytes] Write RF Power 10 dBm to EEPROM Response (06h: Code: ACK)`
+
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `FF` | `06` | `01` | `0A` | `A6` | `51` |  |  |  |  |  |  |  |  |  | `......Q` |
@@ -358,6 +366,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 
 * Write Baudrate 115200 bps to EEPROM
 <br />`[Send 9 Bytes] Write Baudrate 115200 bps to EEPROM (22h: Code: Command)`
+
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `00` | `22` | `03` | `00` | `10` | `FF` | `D8` | `B5` |  |  |  |  |  |  |  | `.."......` |
@@ -373,6 +382,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 | `07` | `2` | ` D8 B5` | `CRC16` |
 
 <br />`[Receive 7 Bytes] Write Baudrate 115200 bps to EEPROM Response (06h: Code: ACK)`
+
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `FF` | `06` | `01` | `FF` | `E1` | `91` |  |  |  |  |  |  |  |  |  | `.......` |
@@ -406,6 +416,7 @@ For the response of the example command, please refer to [GNetPlus's example](GN
 
 * Update EEPROM to Device Registers
 <br />`[Send 9 Bytes] Update EEPROM To Registers (22h: Code: Command)`
+
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `00` | `22` | `03` | `FF` | `FF` | `01` | `58` | `48` |  |  |  |  |  |  |  | `.."....XH` |
