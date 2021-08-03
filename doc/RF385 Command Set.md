@@ -226,7 +226,7 @@ Request Code is 24h
 
 | Offset | Bytes | Type | Name | Description |
 | :----: | :---: | :---: | ---- | ----------- |
-| 0 | 2 | u16 | Address | Read [EEPROM Address](EEPROM%20Table#eeprom-table) (Big Endian)<br />Bit 0~15: Address<br /><br />Bit 15: Memory Option<br />0: EEPROM<br />1: Register |
+| 0 | 2 | u16 | Address | Read [EEPROM Address](EEPROM%20Table.md#eeprom-table) (Big Endian)<br />Bit 0~15: Address<br /><br />Bit 15: Memory Option<br />0: EEPROM<br />1: Register |
 | 1 | 1 | u8 | Length | Number of bytes read from EEPROM |
 
 * Response
