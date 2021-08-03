@@ -1,15 +1,34 @@
 # GNetPlus Protocol
 
+
+
+## Symbols
+
+Symbols to this protocol set are as follows
+
+### Data Types
+
+This protocol default digital data order uses **Big Endian**
+
+| Type | Bytes | Value Range     | Description              |
+| :--: | :---: | :-------------- | ------------------------ |
+|  s8  |   1   | -128 \~ 127     | 8 bit signed integer     |
+| s16  |   2   | -32768 \~ 32767 | 16 bit signed integer    |
+|  u8  |   1   | 0 \~ 255        | 8 bit unsigned integer   |
+| u16  |   2   | 0 \~ 65535      | 16 bit  unsigned integer |
+
+
+
 ## Basic Package
 
-The GNetPlus protocol uses the digital system as Big-Endian.
+
 
 ### Package Structure
 
 | Offset | Bytes | Type | Name      | Description                                                  |
 | :----: | :---: | :--: | --------- | ------------------------------------------------------------ |
 |   0    |   1   |  u8  | Header Id | Start of Header<br />01h: SOH GNetPlus Start of Header       |
-|   1    |   1   |  u8  | Address   | Command Device Address (For RS485)<br />00h: Broadcast (Any Device) |
+|   1    |   1   |  u8  | Address   | Request / Response Device Address (For RS485)<br />00h: Broadcast (Any Device) |
 |   2    |   1   |  u8  | Code      | Request Code (Host to Device)<br />Others: Request code<br /><br />Response Code (Device to Host)<br />06h: ACK <br />15h: NAK<br />11h: Event |
 |   3    |   1   |  u8  | Length    | Data Length (N Bytes)                                        |
 |   4    |   N   |  u8  | Data      | Request parameters / Response Data                           |
@@ -19,47 +38,11 @@ The GNetPlus protocol uses the digital system as Big-Endian.
 | Offset | Bytes | Type | Name       | Description                                                  |
 | :----: | :---: | :--: | ---------- | ------------------------------------------------------------ |
 |   0    |   1   |  u8  | Header Id  | Start of Header <br />01h: SOH GNetPlus Start of Header      |
-|   1    |   1   |  u8  | Address    | Command Device Address (For RS485)<br />00: Broadcast (Any Device) |
+|   1    |   1   |  u8  | Address    | Response Device Address (For RS485)<br />00: Broadcast (Any Device) |
 |   2    |   1   |  u8  | Code       | Response Code (Device to Host)<br />15h: NAK                 |
 |   3    |   1   |  u8  | Length     | 01h: 1 Byte error code                                       |
 |   4    |   N   |  u8  | Error Code | Response error code                                          |
 |  4+N   |   2   | u16  | CRC16      | CRC16                                                        |
-
-### CRC16 Calculation
-
-#### C Source (GNetPlus.c)
-
-``` C
-#define CRC16_PRESET                            (0xFFFF)
-#define CRC16_POLYNOM                           (0xA001)
-
-unsigned short GNetPlus_CRC16_Byte(unsigned short uCRC16, unsigned char bData)
-{
-    int i;
-    uCRC16^=bData;
-    for(i=0; i<8; i++)
-    {
-        if(uCRC16 & 1)
-        {
-            uCRC16=(uCRC16>>1)^CRC16_POLYNOM;
-        }
-        else
-        {
-            uCRC16=(uCRC16>>1);
-        }
-    }
-    return uCRC16;
-}
-
-unsigned short GNetPlus_CRC16_Bytes(unsigned short uCRC16, const unsigned char* pBuffer, int iLength)
-{
-    while(iLength--)
-    {
-        uCRC16=GNetPlus_CRC16_Byte(uCRC16, (*pBuffer++));
-    }
-    return uCRC16;
-}
-```
 
 ### Response Example
 General response packet
@@ -93,9 +76,49 @@ General response packet
 | `04` | `1` | ` F8` | `F8h: Error Code: Parameter error` |
 | `05` | `2` | ` E6 21` | `CRC16` |
 
-### GNetPlus Implement
 
-#### C Header (errno.h)
+
+## CRC16 Calculation
+
+### C Source (GNetPlus.c)
+
+``` C
+#define CRC16_PRESET                            (0xFFFF)
+#define CRC16_POLYNOM                           (0xA001)
+
+unsigned short GNetPlus_CRC16_Byte(unsigned short uCRC16, unsigned char bData)
+{
+    int i;
+    uCRC16^=bData;
+    for(i=0; i<8; i++)
+    {
+        if(uCRC16 & 1)
+        {
+            uCRC16=(uCRC16>>1)^CRC16_POLYNOM;
+        }
+        else
+        {
+            uCRC16=(uCRC16>>1);
+        }
+    }
+    return uCRC16;
+}
+
+unsigned short GNetPlus_CRC16_Bytes(unsigned short uCRC16, const unsigned char* pBuffer, int iLength)
+{
+    while(iLength--)
+    {
+        uCRC16=GNetPlus_CRC16_Byte(uCRC16, (*pBuffer++));
+    }
+    return uCRC16;
+}
+```
+
+
+
+## GNetPlus Implement
+
+### C Header (errno.h)
 
 ``` C
 #define ERR_NONE            ((signed char)0)    // 0x00: no error occured
@@ -113,7 +136,7 @@ General response packet
 #define ERR_HARDWARE        ((signed char)-12)  // 0xF4: Hardware error (Internal error code, need to reset hardware)
 ```
 
-#### C Header (GNetPlus.h)
+### C Header (GNetPlus.h)
 
 ``` C
 #define GNETPLUS_TIMEOUT_200_MS                 (200)
@@ -186,7 +209,7 @@ signed char GNetPlus_SendPackage(unsigned char bAddress, unsigned char bCode, co
 void GNetPlus_MakePackage(GNetPlus_Package_t* ptPakcage, unsigned char bAddress, unsigned char bCode, const unsigned char* pbDatas, unsigned char bLength);
 ```
 
-#### C Source (GNetPlus.c)
+### C Source (GNetPlus.c)
 
 ``` C
 #include <string.h>
