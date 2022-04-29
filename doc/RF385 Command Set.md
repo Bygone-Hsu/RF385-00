@@ -443,7 +443,7 @@ For the response of the example command, please refer to [GNetPlus's example](GN
 
 An event means a package that the device actively responds to to the host
 
-### 5-1. Tag Events Example
+### 5-1\. Tag Events Example
 
 For Tag Event Type setting, please refer to [EEPROM Table](EEPROM%20Table#eeprom-table) and [Write EEPROM](#4-4-write-eeprom) Command
 
