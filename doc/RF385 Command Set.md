@@ -445,7 +445,15 @@ An event means a package that the device actively responds to to the host
 
 ### 5-1\. Tag Events Example
 
-For Tag Event Type setting, please refer to [EEPROM Table](EEPROM%20Table.md#eeprom-table) and [Write EEPROM](#4-4-write-eeprom) Command
+For Tag Event Type setting, please refer to [EEPROM Table](EEPROM%20Table.md#eeprom-table) and [Write EEPROM](#4-4-write-eeprom) Command.
+
+Tag Event Type:
+* 0: STX+PC+EPC+CRC+CR+LF+ETX
+* 1: STX+PC+EPC+CR+LF+ETX
+* 2: PC+EPC+CR
+* 3: STX+[IR]+PC+EPC+CR+LF+ETX
+* 4: GNetPlus Event (PC+EPC)
+* 5: EPC+CR
 
 #### Tag Event Type 0 Example
 
