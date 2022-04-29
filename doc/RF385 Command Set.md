@@ -14,7 +14,7 @@
    3. [Read EEPROM](#4-3-read-eeprom)
    4. [Write EEPROM](#4-4-write-eeprom)
 5. [Events](#5-events)
-   1. [Tag Events Example](#5-1-tag-tvents-example)
+   1. [Tag Events Example](#5-1-tag-events-example)
 6. [Error Code](#6-error-code)
 
 ## 1. History
