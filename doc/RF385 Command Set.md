@@ -219,7 +219,7 @@ Request Code is 24h
 
 | Offset | Bytes | Type | Name    | Description                                                                                                                                             |
 |:------:|:-----:|:----:| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0      | 2     | u16  | Address | Read [EEPROM Address](EEPROM%20Table.md) (Big Endian)<br />Bit 0~15: Address<br /><br />Bit 15: Memory Option<br />0: EEPROM<br />1: Register |
+| 0      | 2     | u16  | Address | Read [EEPROM Address](EEPROM%20Table.md#eeprom-table) (Big Endian)<br />Bit 0~15: Address<br /><br />Bit 15: Memory Option<br />0: EEPROM<br />1: Register |
 | 1      | 1     | u8   | Length  | Number of bytes read from EEPROM                                                                                                                        |
 
 * Response
@@ -309,7 +309,7 @@ Request Code is 22h
 
 | Offset | Bytes | Type | Name    | Description                                                                                                                                                                                                                                                                                                                  |
 |:------:|:-----:|:----:| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0      | 2     | u16  | Address | Write [EEPROM Address](EEPROM%20Table.md) (Big Endian)<br />Bit 0~14: EEPROM/Register Address please refer to [EEPROM Table](EEPROM%20Table.md) <br /><br />Bit 15: Memory Option<br />0: EEPROM<br />1: Registers (Directly update the set value to Registers, and will force to enter the command mode) |
+| 0      | 2     | u16  | Address | Write [EEPROM Address](EEPROM%20Table.md#eeprom-table) (Big Endian)<br />Bit 0~14: EEPROM/Register Address please refer to [EEPROM Table](EEPROM%20Table.md#eeprom-table) <br /><br />Bit 15: Memory Option<br />0: EEPROM<br />1: Registers (Directly update the set value to Registers, and will force to enter the command mode) |
 | 1      | N     | u8   | Data    | Write data.                                                                                                                                                                                                                                                                                                                  |
 
 * Response
@@ -445,7 +445,7 @@ An event means a package that the device actively responds to to the host
 
 ### 5-1\. Tag Events Example
 
-For Tag Event Type setting, please refer to [EEPROM Table](EEPROM%20Table.md) and [Write EEPROM](#4-4-write-eeprom) Command
+For Tag Event Type setting, please refer to [EEPROM Table](EEPROM%20Table.md#eeprom-table) and [Write EEPROM](#4-4-write-eeprom) Command
 
 #### Tag Event Type 0 Example
 
