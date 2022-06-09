@@ -164,7 +164,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 | `01`     | `1`     | ` 00`                                                   | `Device Address`                                               |
 | `02`     | `1`     | ` 12`                                                   | `00h: Code: Change Working Mode`                               |
 | `03`     | `1`     | ` 01`                                                   | `Data Length`                                                  |
-| `04`     | `1`     | ` 00`                                                   | `00h: [Working Mode](#working-mode): Auto Mode`                |
+| `04`     | `1`     | ` 00`                                                   | `00h`: [Working Mode](#working-mode): Auto Mode                |
 | `05`     | `2`     | ` B1 A1`                                                | `CRC16`                                                        |
 
 <br />`[Receive 7 Bytes] Enter Auto Mode Response (06h: Code: ACK)`
@@ -195,7 +195,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 | `01`     | `1`     | ` 00`                                                   | `Device Address`                                               |
 | `02`     | `1`     | ` 12`                                                   | `00h: Code: Change Working Mode`                               |
 | `03`     | `1`     | ` 01`                                                   | `Data Length`                                                  |
-| `04`     | `1`     | ` 01`                                                   | `01h`: [Working Mode](#working-mode): Command Mode                              |
+| `04`     | `1`     | ` 01`                                                   | `01h`: [Working Mode](#working-mode): Command Mode             |
 | `05`     | `2`     | ` 71 60`                                                | `CRC16`                                                        |
 
 <br />`[Receive 7 Bytes] Enter Command Mode Response (06h: Code: ACK)`
@@ -210,7 +210,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 | `01`     | `1`     | ` FF`                                                   | `Device Address`                                               |
 | `02`     | `1`     | ` 06`                                                   | `06h: Code: ACK`                                               |
 | `03`     | `1`     | ` 01`                                                   | `Data Length`                                                  |
-| `04`     | `1`     | ` 00`                                                   | `01h: Working Mode: Command Mode`                              |
+| `04`     | `1`     | ` 00`                                                   | `01h`: [Working Mode](#working-mode): Command Mode             |
 | `05`     | `2`     | ` A1 D1`                                                | `CRC16`                                                        |
 
 ## 4-3\. Read EEPROM
