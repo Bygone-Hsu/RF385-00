@@ -151,9 +151,8 @@ Request Code is 12h
 For the NAK response of the example command, please refer to [GNetPlus's example](GNetPlus%20Protocol.md#response-a-nak-package)
 
 * Enter Auto Mode
-  <br />`[Send 7 Bytes] Enter Auto Mode (10h: Code: Command)`
+  <br />`[Send 7 Bytes] Enter Auto Mode (12h: Code: Command)`
 
-<br />`[Send 7 Bytes] Enter Auto Mode (12h: Code: Command)`
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
 | :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
 | `00` | `01` | `00` | `12` | `01` | `00` | `B1` | `A1` |  |  |  |  |  |  |  |  |  | `.......` |
@@ -164,7 +163,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 | `01`     | `1`     | ` 00`                                                   | `Device Address`                                               |
 | `02`     | `1`     | ` 12`                                                   | `00h: Code: Change Working Mode`                               |
 | `03`     | `1`     | ` 01`                                                   | `Data Length`                                                  |
-| `04`     | `1`     | ` 00`                                                   | `00h: Working Mode: Auto Mode`                                 |
+| `04`     | `1`     | ` 00`                                                   | `00h: [Working Mode](#working-mode): Auto Mode`                |
 | `05`     | `2`     | ` B1 A1`                                                | `CRC16`                                                        |
 
 <br />`[Receive 7 Bytes] Enter Auto Mode Response (06h: Code: ACK)`
