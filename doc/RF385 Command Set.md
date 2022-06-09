@@ -20,6 +20,7 @@
 ## 1. History
 
 ### 2022/06/09
+
 * Fix wrong example of entering auto mode
 
 ### 2022/04/29
@@ -154,8 +155,8 @@ For the NAK response of the example command, please refer to [GNetPlus's example
   <br />`[Send 7 Bytes] Enter Auto Mode (12h: Code: Command)`
 
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
-| :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
-| `00` | `01` | `00` | `12` | `01` | `00` | `B1` | `A1` |  |  |  |  |  |  |  |  |  | `.......` |
+|:--------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:------------------------------------------------------- |
+| `00`     | `01` | `00` | `12` | `01` | `00` | `B1` | `A1` |      |      |      |      |      |      |      |      |      | `.......`                                               |
 
 | `Offset` | `Bytes` | <div style='min-width:12em' align='center'>`Data`</div> | <div style='min-width:32em' align='center'>`Description`</div> |
 |:--------:|:-------:|:------------------------------------------------------- |:-------------------------------------------------------------- |
@@ -178,7 +179,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 | `01`     | `1`     | ` FF`                                                   | `Device Address`                                               |
 | `02`     | `1`     | ` 06`                                                   | `06h: Code: ACK`                                               |
 | `03`     | `1`     | ` 01`                                                   | `Data Length`                                                  |
-| `04`     | `1`     | ` 00`                                                   | `00h: [Working Mode](#working-mode): Auto Mode`                |
+| `04`     | `1`     | ` 00`                                                   | `00h`: [Working Mode](#working-mode): Auto Mode                |
 | `05`     | `2`     | ` A1 D1`                                                | `CRC16`                                                        |
 
 * Enter Command Mode
@@ -194,7 +195,7 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 | `01`     | `1`     | ` 00`                                                   | `Device Address`                                               |
 | `02`     | `1`     | ` 12`                                                   | `00h: Code: Change Working Mode`                               |
 | `03`     | `1`     | ` 01`                                                   | `Data Length`                                                  |
-| `04`     | `1`     | ` 01`                                                   | `01h: Working Mode: Command Mode`                              |
+| `04`     | `1`     | ` 01`                                                   | `01h`: [Working Mode](#working-mode): Command Mode                              |
 | `05`     | `2`     | ` 71 60`                                                | `CRC16`                                                        |
 
 <br />`[Receive 7 Bytes] Enter Command Mode Response (06h: Code: ACK)`
