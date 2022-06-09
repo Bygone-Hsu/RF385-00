@@ -19,6 +19,9 @@
 
 ## 1. History
 
+### 2022/06/09
+* Fix wrong example of entering auto mode
+
 ### 2022/04/29
 
 * Remove Tag Event Type 6 (EEPROM Table, Address 0Eh)
@@ -150,18 +153,19 @@ For the NAK response of the example command, please refer to [GNetPlus's example
 * Enter Auto Mode
   <br />`[Send 7 Bytes] Enter Auto Mode (10h: Code: Command)`
 
+<br />`[Send 7 Bytes] Enter Auto Mode (12h: Code: Command)`
 | `Offset` | `00` | `01` | `02` | `03` | `04` | `05` | `06` | `07` | `08` | `09` | `0A` | `0B` | `0C` | `0D` | `0E` | `0F` | <div style='min-width:8em' align='center'>`ASCII`</div> |
-|:--------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:------------------------------------------------------- |
-| `00`     | `01` | `00` | `10` | `01` | `00` | `71` | `00` |      |      |      |      |      |      |      |      |      | `.....q.`                                               |
+| :------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---- |
+| `00` | `01` | `00` | `12` | `01` | `00` | `B1` | `A1` |  |  |  |  |  |  |  |  |  | `.......` |
 
 | `Offset` | `Bytes` | <div style='min-width:12em' align='center'>`Data`</div> | <div style='min-width:32em' align='center'>`Description`</div> |
 |:--------:|:-------:|:------------------------------------------------------- |:-------------------------------------------------------------- |
 | `00`     | `1`     | ` 01`                                                   | `SOH (Start of Heading)`                                       |
 | `01`     | `1`     | ` 00`                                                   | `Device Address`                                               |
-| `02`     | `1`     | ` 10`                                                   | `00h: Code: Set Working Mode`                                  |
+| `02`     | `1`     | ` 12`                                                   | `00h: Code: Change Working Mode`                               |
 | `03`     | `1`     | ` 01`                                                   | `Data Length`                                                  |
-| `04`     | `1`     | ` 00`                                                   | `00h: [Working Mode](#working-mode): Auto Mode`                |
-| `05`     | `2`     | ` 71 00`                                                | `CRC16`                                                        |
+| `04`     | `1`     | ` 00`                                                   | `00h: Working Mode: Auto Mode`                                 |
+| `05`     | `2`     | ` B1 A1`                                                | `CRC16`                                                        |
 
 <br />`[Receive 7 Bytes] Enter Auto Mode Response (06h: Code: ACK)`
 
@@ -217,10 +221,10 @@ Request Code is 24h
 
 * Parameter
 
-| Offset | Bytes | Type | Name    | Description                                                                                                                                             |
-|:------:|:-----:|:----:| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Offset | Bytes | Type | Name    | Description                                                                                                                                                |
+|:------:|:-----:|:----:| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0      | 2     | u16  | Address | Read [EEPROM Address](EEPROM%20Table.md#eeprom-table) (Big Endian)<br />Bit 0~15: Address<br /><br />Bit 15: Memory Option<br />0: EEPROM<br />1: Register |
-| 1      | 1     | u8   | Length  | Number of bytes read from EEPROM                                                                                                                        |
+| 1      | 1     | u8   | Length  | Number of bytes read from EEPROM                                                                                                                           |
 
 * Response
   * NAK: Response an [error code](#4\.-error-code). 
@@ -307,10 +311,10 @@ Request Code is 22h
 
 * Parameter
 
-| Offset | Bytes | Type | Name    | Description                                                                                                                                                                                                                                                                                                                  |
-|:------:|:-----:|:----:| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Offset | Bytes | Type | Name    | Description                                                                                                                                                                                                                                                                                                                         |
+|:------:|:-----:|:----:| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0      | 2     | u16  | Address | Write [EEPROM Address](EEPROM%20Table.md#eeprom-table) (Big Endian)<br />Bit 0~14: EEPROM/Register Address please refer to [EEPROM Table](EEPROM%20Table.md#eeprom-table) <br /><br />Bit 15: Memory Option<br />0: EEPROM<br />1: Registers (Directly update the set value to Registers, and will force to enter the command mode) |
-| 1      | N     | u8   | Data    | Write data.                                                                                                                                                                                                                                                                                                                  |
+| 1      | N     | u8   | Data    | Write data.                                                                                                                                                                                                                                                                                                                         |
 
 * Response
   * NAK: Response an [error code](#4\.-error-code).
@@ -448,6 +452,7 @@ An event means a package that the device actively responds to to the host
 For Tag Event Type setting, please refer to [EEPROM Table](EEPROM%20Table.md#eeprom-table) and [Write EEPROM](#4-4-write-eeprom) Command.
 
 Tag Event Type:
+
 * 0: STX+PC+EPC+CRC+CR+LF+ETX
 * 1: STX+PC+EPC+CR+LF+ETX
 * 2: PC+EPC+CR
