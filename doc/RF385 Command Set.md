@@ -41,11 +41,11 @@ Symbols to this command set are as follows
 The RF385-00 commands digital data order uses **Big Endian**
 
 | Type | Bytes | Value Range     | Description              |
-|:----:|:-----:|:--------------- | ------------------------ |
-| s8   | 1     | -128 \~ 127     | 8 bit signed integer     |
-| s16  | 2     | -32768 \~ 32767 | 16 bit signed integer    |
-| u8   | 1     | 0 \~ 255        | 8 bit unsigned integer   |
-| u16  | 2     | 0 \~ 65535      | 16 bit  unsigned integer |
+| :--: | :---: | :-------------- | ------------------------ |
+|  s8  |   1   | -128 \~ 127     | 8 bit signed integer     |
+| s16  |   2   | -32768 \~ 32767 | 16 bit signed integer    |
+|  u8  |   1   | 0 \~ 255        | 8 bit unsigned integer   |
+| u16  |   2   | 0 \~ 65535      | 16 bit  unsigned integer |
 
 ## 4\. Commands
 
@@ -57,8 +57,8 @@ RF385-00 commands is base on [GNetPlus Protocol](GNetPlus%20Protocol.md)
 |:-----------------------------------------:|:-----:| ------------------------------- |
 | [Get Version](#4-1-get-version-command)   | `10h` | Get Firmware / Hardware version |
 | [Set Working Mode](#4-2-set-working-mode) | `12h` | Set Working Mode                |
-| [Read EEPROM](#4-3-read-eeprom)           | 24h   | Read data from EEPROM           |
-| [Write EEPROM](#4-4-write-eeprom)         | 22h   | Write data to EEPROM            |
+| [Read EEPROM](#4-3-read-eeprom)           | `24h` | Read data from EEPROM           |
+| [Write EEPROM](#4-4-write-eeprom)         | `22h` | Write data to EEPROM            |
 
 ## 4-1\. Get Version Command
 
